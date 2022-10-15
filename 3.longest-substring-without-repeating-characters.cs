@@ -8,17 +8,24 @@
 public class Solution {
     public int LengthOfLongestSubstring(string s) {
         char[] sArray = s.ToCharArray();
-        Console.WriteLine(sArray);
         int index = 0;
-        foreach (var item in sArray)
+        
+        for(int index = 0; index <= sArray.Length; index++)
         {
-            sArray.Check(item, index+1);
+            if(sArray.Check(item, index) == sArray.Length)
+            {
+
+            }
         }
     }
 
-    public void Check(this char[] array, string ch, int index)
+    public int Check(this char[] array, string ch, int index)
     {
-        int i = Array.IndexOf(array, ch);
+        int i = Array.LastIndexOf( array, array[index]);
+        if(index != i )
+        {
+            return array.Length;
+        }
     }
 }
 // @lc code=end
